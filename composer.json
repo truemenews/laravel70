@@ -1,12 +1,12 @@
 {
-    "name": "laravel/laravel",
+    "name": "trueme/laravel-broadcast",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "The Laravel include broadcast.",
     "keywords": [
         "framework",
         "laravel"
     ],
-    "license": "MIT",
+    "license": "TrueMe",
     "require": {
         "php": "^7.2.5|^8.0",
         "fideloper/proxy": "^4.4",
@@ -49,17 +49,5 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "scripts": {
-        "post-autoload-dump": [
-            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
-        ],
-        "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],
-        "post-create-project-cmd": [
-            "@php artisan key:generate --ansi"
-        ]
-    }
+    "prefer-stable": true
 }
