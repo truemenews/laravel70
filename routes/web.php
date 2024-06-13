@@ -27,3 +27,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('message/index', 'MessageController@index');
 Route::get('message/send', 'MessageController@send');
+Route::get('call-static/test', 'CallStaticController@testStatic');

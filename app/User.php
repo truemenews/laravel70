@@ -36,4 +36,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function staticMe()
+    {
+        echo 'User Model is called static function';echo '<br/>';
+    }
 }
