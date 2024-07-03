@@ -1,7 +1,5 @@
 <?php namespace App\Http\Controllers;
 
-//use BindParams\Request;
-
 class BindParamsController extends Controller
 {
     private $props = ['request', 'server', 'header', 'config'];
