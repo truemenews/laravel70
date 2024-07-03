@@ -39,4 +39,5 @@ Route::group(['prefix'=>'auto-bind-params'], function(){
     Route::post('/user/submit', ['as' => 'user.submit', 'uses'=>'UserParamsController@submitForm']);
     Route::post('/user/post-with-header', [
         'as' => 'user.postWithHeader', 'uses'=>'UserParamsController@postWithHeader']);
+    Route::get('/config', 'UserParamsController@getConfig');
 });

@@ -39,4 +39,12 @@ class UserParamsController extends BindParamsController
             'param2' => $this->request->param2
         ]);
     }
+
+    public function getConfig()
+    {
+        return view('bind-params.get-config', [
+            'appName' => $this->config->app->name,
+            'logDaily' => $this->config->logging->channels->daily
+        ]);
+    }
 }
