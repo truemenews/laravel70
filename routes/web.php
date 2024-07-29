@@ -37,3 +37,12 @@ Route::prefix('config')->group(function () {
     Route::get('get', 'ConfigController@get');
 });
 
+Route::group(['prefix'=>'auto-bind-params'], function(){
+    Route::get('/user/get-name', 'UserParamsController@getName');
+    Route::get('/server/get-params', 'UserParamsController@getServer');
+    Route::get('/user/post-form', 'UserParamsController@postForm');
+    Route::post('/user/submit', ['as' => 'user.submit', 'uses'=>'UserParamsController@submitForm']);
+    Route::post('/user/post-with-header', [
+        'as' => 'user.postWithHeader', 'uses'=>'UserParamsController@postWithHeader']);
+    Route::get('/config', 'UserParamsController@getConfig');
+});
