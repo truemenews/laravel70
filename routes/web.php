@@ -33,3 +33,7 @@ Route::prefix('closure')->group(function () {
     Route::get('where-callback', 'ClosureDbController@whereCallback');
 });
 
+Route::prefix('config')->group(function () {
+    Route::get('get', 'ConfigController@get');
+});
+
