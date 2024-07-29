@@ -12,6 +12,7 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        //
+        'auto-bind-params/user/submit',
+        'auto-bind-params/user/post-with-header'
     ];
 }
