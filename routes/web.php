@@ -33,6 +33,10 @@ Route::prefix('closure')->group(function () {
     Route::get('where-callback', 'ClosureDbController@whereCallback');
 });
 
+Route::prefix('config')->group(function () {
+    Route::get('get', 'ConfigController@get');
+});
+
 Route::group(['prefix'=>'auto-bind-params'], function(){
     Route::get('/user/get-name', 'UserParamsController@getName');
     Route::get('/server/get-params', 'UserParamsController@getServer');
