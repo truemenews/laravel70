@@ -37,6 +37,11 @@ Route::prefix('config')->group(function () {
     Route::get('get', 'ConfigController@get');
 });
 
+Route::prefix('container')->group(function () {
+    Route::get('singleton', 'ContainerController@singleton');
+    Route::get('not-singleton', 'ContainerController@multiObjects');
+});
+
 Route::group(['prefix'=>'auto-bind-params'], function(){
     Route::get('/user/get-name', 'UserParamsController@getName');
     Route::get('/server/get-params', 'UserParamsController@getServer');
