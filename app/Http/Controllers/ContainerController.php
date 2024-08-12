@@ -9,20 +9,27 @@ class ContainerController extends Controller
 {
     public function singleton()
     {
+        dd(app()->make('auth'));
         // Step 1, check bindings in container when
         // TestService haven't bind
-        //dd('Step1: ContainerController', app());
+        //dd('Step1: ContainerController:container', app());
         app()->singleton(TestService::class, function ($app) {
             return new TestService;
         });
 
         // Step 2, check bindings in container when
         // TestService haven't bind
-        dd('Step2: ContainerController', app());
+        // dd('Step2: ContainerController:bind', app());
 
         $testService1 = app()->make(TestService::class);
+        // Step 3, get TestService from container 
+        // because of TestService in step 2, that's only
+        //  Closure, this step will relove it
+        dd('Step3: ContainerController:resolve', app());
+
         $testService2 = app()->make(TestService::class);
 
+        dd('Step4: ContainerController:call singleton', app(), $testService2);
     }
 
     public function multiObjects()
