@@ -24,8 +24,11 @@ function getAliases()
  */
 function load($className)
 {
-    var_dump(111, $className);
+    echo '<br/> + Step2: Register alias: ' . $className;
     if (isset(getAliases()[$className])) {
+        echo '<br/> + Step3: Set alias: <b>' 
+                .$className. ' > '. getAliases()[$className] . '</b><br/>';
+
         class_alias(getAliases()[$className], $className);
     }
 }
@@ -83,20 +86,29 @@ echo 'Index with no fw alias';
 
 spl_autoload_register("load", true, true);
 
-echo '<br/>----------------------------------------';
+echo '<br/>----------------------------------------<br/>';
+echo '+ Step1: Call Alias: ' . TrueMe::class;
 $trueMe = new TrueMe;
 var_dump($trueMe);
-echo '<br/>========================================';
+echo '+ Step4: new class: <b>'. getAliases()[TrueMe::class] .'</b>';
 
+
+echo '<br/>========================================</br>';
+echo '+ Step1: Call Alias: '. Process::class;
 $process = new Process;
 var_dump($process);
-echo '<br/>========================================';
+echo '+ Step4: new class: <b>'. getAliases()[Process::class] .'</b>';
 
+
+echo '<br/>========================================</br>';
+echo '+ Step1: New instance from: <b>'. Name::class . '</b>';
 $name = new Name;
 var_dump($name);
-echo '<br/>========================================';
+echo '+ Step4: dont register alias: <b>'. Name::class .'</b>';
 
 
+echo '<br/>========================================</br>';
+echo '+ Step1: New instance from: <b>'. ClassDontExist::class . '</b>';
 $classDontExist = new ClassDontExist;
 var_dump($classDontExist);
 echo '<br/>----------------------------------------';
