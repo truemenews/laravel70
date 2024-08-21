@@ -1,4 +1,8 @@
 <?php
+
+/**
+ * This function will auto include all php file
+ */
 function boot()
 {
     include 'ClassSameFolder.php';
@@ -37,6 +41,7 @@ function load($className)
                 .$className. ' > '. getAliases()[$className] . '</b><br/><br/>';
 
         class_alias(getAliases()[$className], $className);
+        return;
     }
     echo '<br/> + Step3: Can not Set alias: <b>' .$className. '</b><br/><br/>';
 }
