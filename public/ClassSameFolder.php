@@ -2,7 +2,9 @@
 
 
 /**
- * 
+ * This class will
+ *     + Same folder with index.php
+ *     + same Namespace
  */
 class ClassSameFolder
 {
