@@ -46,3 +46,7 @@ Route::group(['prefix'=>'auto-bind-params'], function(){
         'as' => 'user.postWithHeader', 'uses'=>'UserParamsController@postWithHeader']);
     Route::get('/config', 'UserParamsController@getConfig');
 });
+
+Route::prefix('composer')->group(function () {
+    Route::get('load', 'ComposerController@load');
+});
