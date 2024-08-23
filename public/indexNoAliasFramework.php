@@ -7,6 +7,7 @@ function boot()
 {
     include 'ClassSameFolder.php';
     include './folder5/subfolder/ClassSameNamespace.php';
+    include './folder6/DifferenceClass.php';
 }
 
 
@@ -109,6 +110,8 @@ use Process; //call alias
 use ClassDontExist; //call alias
 //use ClassSameNamespace;
 
+use Folder6\DifferenceClass;
+
 use Folder3\Sub\Name; //Call class
 
 
@@ -138,7 +141,7 @@ var_dump($process);
 
 echo '<br/><br/><br/>';
 echo '<br/>--<span style="font-size: 30px;">Case 3</span>--------------------------------';
-echo '<br/>---- + use direct namespace class <b>Process</b>--------------------------------------';
+echo '<br/>---- + use direct namespace class <b>Name</b>--------------------------------------';
 echo '<br/>---- + NOT call spl_autoload_register > load()--------------------------';
 echo '<br/>--------------------------------------------------------------------------------<br/>';
 echo '+ Step1: New instance from: <b>'. Name::class . '</b></br></br>';
@@ -175,6 +178,17 @@ var_dump($ClassSameNamespace);
 
 echo '<br/><br/><br/>';
 echo '<br/>--<span style="font-size: 30px;">Case 6</span>--------------------------------';
+echo '<br/>---- + call to namespace: <b>DifferenceClass</b>-------------------------';
+echo '<br/>---- + dont find DifferenceClass alias in spl_autoload_register > load()--------------';
+echo '<br/>--------------------------------------------------------------------------------<br/>';
+echo '<br/>========================================</br>';
+echo '+ Step1: New instance from: <b>'. DifferenceClass::class . '</b>';
+$differenceClass = new DifferenceClass;
+var_dump($differenceClass);
+
+
+echo '<br/><br/><br/>';
+echo '<br/>--<span style="font-size: 30px;">Case 7</span>--------------------------------';
 echo '<br/>---- + call to namespace: <b>ClassDontExist</b>-------------------------';
 echo '<br/>---- + dont find ClassDontExist alias in spl_autoload_register > load()--------------';
 echo '<br/>--------------------------------------------------------------------------------<br/>';
