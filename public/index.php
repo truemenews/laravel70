@@ -21,6 +21,7 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
+var_dump(111, 'call /../vendor/autoload.php');
 require __DIR__.'/../vendor/autoload.php';
 
 /*
