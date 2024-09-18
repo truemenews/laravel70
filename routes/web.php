@@ -51,3 +51,8 @@ Route::group(['prefix'=>'auto-bind-params'], function(){
         'as' => 'user.postWithHeader', 'uses'=>'UserParamsController@postWithHeader']);
     Route::get('/config', 'UserParamsController@getConfig');
 });
+
+Route::prefix('same-namespace')->group(function () {
+    Route::get('monolog-default', 'SameNamespaceController@monologDefault');
+    Route::get('monolog-override', 'SameNamespaceController@monologOverride');
+});
