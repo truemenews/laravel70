@@ -13,11 +13,9 @@ class GeneratorController extends Controller
 
         $ranges = $this->getDataRam($max);
 
-        dd(count($ranges));
         foreach ($ranges as $range) {
             echo "Dataset {$range} <br>";
         }
-        dd('GeneratorController');
     }
 
     public function getDataRam($max=10)
@@ -39,11 +37,9 @@ class GeneratorController extends Controller
 
         $ranges = $this->getDataGenerator($max);
 
-        dd($ranges);
         foreach ($ranges as $range) {
             echo "Dataset {$range} <br>";
         }
-        dd('GeneratorController');
     }
 
     public function getDataGenerator($max=10)
