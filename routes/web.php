@@ -51,3 +51,12 @@ Route::group(['prefix'=>'auto-bind-params'], function(){
         'as' => 'user.postWithHeader', 'uses'=>'UserParamsController@postWithHeader']);
     Route::get('/config', 'UserParamsController@getConfig');
 });
+
+Route::group(['prefix'=>'contract'], function(){
+    Route::get('/', 'ContractController@index');
+});
+
+Route::group(['prefix'=>'payment'], function(){
+    Route::get('/charge', 'PaymentController@charge');
+    Route::get('/refund', 'PaymentController@refund');
+});
