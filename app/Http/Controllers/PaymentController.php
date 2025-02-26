@@ -24,7 +24,7 @@ class PaymentController extends Controller
 
     public function refund()
     {
-        if ($refunded = $this->paymentGateway->refund('transaction123'));
+        if ($refunded = $this->paymentGateway->refund('transaction123'))
             var_dump($refunded);
 
         return false;
