@@ -51,3 +51,7 @@ Route::group(['prefix'=>'auto-bind-params'], function(){
         'as' => 'user.postWithHeader', 'uses'=>'UserParamsController@postWithHeader']);
     Route::get('/config', 'UserParamsController@getConfig');
 });
+
+Route::prefix('array-access')->group(function () {
+    Route::get('/', 'ArrayAccessController@index');
+});
